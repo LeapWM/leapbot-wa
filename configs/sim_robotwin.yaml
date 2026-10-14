@@ -1,0 +1,36 @@
+defaults:
+- robotwin
+- _self_
+ckpt: weights/leapbotwa-robotwin.pt
+gpu_id: 0
+seed: 42
+mixed_precision: bf16
+model:
+  load_text_encoder: true
+EVALUATION:
+  action_horizon: 32
+  num_inference_steps: 10
+  sigma_shift: null
+  text_cfg_scale: 1.0
+  negative_prompt: ''
+  rand_device: cpu
+  tiled: false
+  dataset_stats_path: configs/stats/robotwin_dataset_stats.json
+  device: cuda
+  robotwin_root: ${oc.env:LEAPBOT_WA_ROBOTWIN_ROOT,third_party/RoboTwin}
+  policy_name: leapbot_wa_policy
+  task_name: null
+  task_config: demo_randomized
+  instruction_type: unseen
+  eval_num_episodes: 50
+  output_dir: ./evaluate_results/robotwin/${now:%Y%m%d_%H%M%S}
+  replan_steps: 24
+  timing_enabled: false
+  skip_get_obs_within_replan: false
+  expert_check: true
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: .
+  output_subdir: null

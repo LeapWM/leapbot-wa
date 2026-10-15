@@ -29,6 +29,7 @@ Official repository for [**LeapBot-WA: World-Anchor Action Models via Predictive
 
 ## News
 
+- **2026/10/15:** Released model weights for LIBERO, LIBERO-Plus, and RoboTwin, together with the shared mixed V-JEPA encoder and adapter, on [Hugging Face](https://huggingface.co/NanZheng77/LeapBot-WA). Inference code, environment setup, and per-benchmark download and evaluation instructions are available below.
 - **2026/09/08:** Added the model architecture and demonstrations from LIBERO, LIBERO-Plus, RoboTwin, and real-world manipulation.
 - **2026/07/30:** Updated paper available on [arXiv](https://arxiv.org/abs/2607.23969v2).
 

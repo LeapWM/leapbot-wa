@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+weights/
+*.pt
+*.pth
+*.safetensors
+
+evaluate_results/
+
+# Local simulator settings and evaluation artifacts
+.libero/
+*.log
+.cache/
+.mypy_cache/
+.ruff_cache/
+/9月8日(1).mp4

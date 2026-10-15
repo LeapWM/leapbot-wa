@@ -1,0 +1,35 @@
+defaults:
+- libero
+- _self_
+ckpt: weights/leapbotwa-libero.pt
+gpu_id: 0
+seed: 42
+mixed_precision: bf16
+model:
+  load_text_encoder: true
+EVALUATION:
+  action_horizon: 32
+  num_inference_steps: 10
+  sigma_shift: null
+  text_cfg_scale: 1.0
+  negative_prompt: ''
+  rand_device: cpu
+  tiled: false
+  dataset_stats_path: configs/stats/libero_dataset_stats.json
+  device: cuda
+  task_suite_name: libero_spatial
+  task_id: 0
+  num_trials: 50
+  output_dir: ./evaluate_results/libero/${now:%Y%m%d_%H%M%S}
+  save_rollout_video: true
+  num_steps_wait: 30
+  replan_steps: 10
+  binarize_gripper: true
+  gripper_action_encoding: auto
+  use_action_ensembler: false
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: .
+  output_subdir: null
